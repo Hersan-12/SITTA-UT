@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tracking Pengiriman - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="dashboard.html" class="link-back">← Kembali</a>
+    <div class="card">
+      <h3>Tracking Pengiriman</h3>
+      <label for="inputNoDO">Nomor Delivery Order</label>
+
+<!-- dropdown -->
+<select id="selectNoDO" style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px;">
+  <option value="">-- Pilih Nomor DO --</option>
+  <option value="manual">Ketik Nomor DO Manual...</option>
+</select>
+
+<!-- input manual (disembunyikan awalnya) -->
+<input id="inputNoDO" placeholder="Masukkan nomor DO (contoh: 2023001234)" 
+       style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px;display:none;">
+
+<button id="btnCari" class="btn">Cari</button>
+
+
+      <div id="trackingResult" class="mt-16"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/tracking.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SITTA - UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="center-card">
+    <div class="card login-card" style="text-align:center;">
+      <img src="img/logo-ut.png" alt="Logo UT" 
+           style="width:80px;margin-bottom:12px;">
+      <h2 style="margin-bottom:4px;">SITTA - UT</h2>
+      <p style="margin-top:0;color:var(--muted);font-size:14px;">
+        Sistem Informasi Tracking & Transaksi Bahan Ajar
+      </p>
+      <hr style="margin:16px 0;border:0;border-top:1px solid var(--border);">
+
+      <input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+<div id="loginFeedback" class="feedback"></div>
+<button id="btnLogin" class="btn" style="width:100%;margin-top:8px;">Masuk</button>
+
+<!-- Tombol kecil di bawah -->
+<div class="row small-gap link-row">
+  <button id="btnLupa" class="link-btn">Lupa Password?</button>
+  <span style="color:var(--muted);">|</span>
+  <button id="btnDaftar" class="link-btn">Daftar Akun</button>
+</div>
+
+<div id="loginFeedback" class="feedback"></div>
+
+<!-- Modal Popup -->
+<div id="modalBackdrop" class="modal-backdrop hidden">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" id="modalClose">&times;</button>
+  </div>
+</div>
+
+  <script src="js/login.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>

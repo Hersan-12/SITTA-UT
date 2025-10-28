@@ -1,0 +1,435 @@
+/* === Variabel Warna ===*/
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --accent: #2b6cb0;
+  --accent-hover: #2563eb;
+  --sidebar-bg: #1e3a8a;
+  --sidebar-text: #e0e7ff;
+  --text: #111;
+  --muted: #6b7280;
+  --border: #d1d5db;
+}
+
+/* === Tema Gelap === */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --sidebar-bg: #0f172a;
+  --sidebar-text: #e2e8f0;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --border: #334155;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+.card, .sidebar, .btn {
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+
+/* === Reset & Dasar ===*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: #111;
+}
+
+/* === Komponen Umum === */
+.container {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(11, 15, 30, 0.06);
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+.btn.ghost:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 6px;
+  transition: color 0.25s;
+}
+.link-btn:hover {
+  color: var(--accent-hover);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.feedback {
+  color: crimson;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* === Layout Dashboard === */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h3 {
+  color: #fff;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--sidebar-text);
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background 0.25s;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar a.active {
+  background: var(--accent-hover);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Main area */
+.main {
+  flex: 1;
+  padding: 24px;
+  background: var(--bg);
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Card grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* === Login Page === */
+.center-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-card {
+  width: 340px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.login-card img {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.25);
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+/* === Modal === */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hidden {
+  display: none;
+}
+.modal {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 420px;
+  width: 90%;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  border: 0;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* === Tabel Stok === */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background: #fff;
+}
+.table th,
+.table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+.table th {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+.table tr:nth-child(even) {
+  background: #f9fafb;
+}
+/* === Form Grid (Tambah Stok) === */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 8px 0;
+}
+/* === Tracking Page === */
+.mt-16 {
+  margin-top: 16px;
+}
+ol {
+  padding-left: 20px;
+}
+ol li {
+  margin: 6px 0;
+}
+.small {
+  font-size: 14px;
+  color: var(--muted);
+}
+/* === Link Kembali === */
+.link-back {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.link-back:hover {
+  text-decoration: underline;
+}
+/* === Responsif === */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .main {
+    padding: 16px;
+  }
+}
+#trackingResult .card {
+  margin-bottom: 20px;
+}
+/* ===== Background lembut logo UT ===== */
+body {
+  position: relative;
+  background: transparent !important; /* pastikan latar utama transparan */
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/Logo-UT.jpg") no-repeat center center;
+  background-size: 320px; /* ubah sesuai kebutuhan */
+  opacity: 0.08; /* makin kecil makin samar */
+  z-index: 0;
+  pointer-events: none;
+}
+/* pastikan elemen utama transparan agar watermark kelihatan */
+.layout, .main {
+  background: transparent !important;
+}
+/* sidebar biarkan tetap berwarna */
+.sidebar {
+  background-color: #0b1a57; /* contoh warna biru tua */
+  color: white;
+  z-index: 1;
+}
+/* ======== FIX FULL BACKGROUND + WATERMARK ======== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* struktur utama agar full tinggi layar */
+.layout {
+  min-height: 100vh; /* vh = tinggi viewport */
+  display: flex;
+  background: transparent;
+}
+
+/* watermark logo UT di belakang */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0; /* singkatan dari top:0; left:0; right:0; bottom:0; */
+  background: url("../img/Logo-UT.jpg") no-repeat center center;
+  background-size: 300px;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* MODE TERANG */
+body.light-mode {
+  background-color: #ffffff; /* latar dasar */
+}
+body.light-mode .layout,
+body.light-mode .main {
+  background-color: rgba(255, 255, 255, 0.96);
+}
+/* ===== FULL BACKGROUND LOGO UT UNTUK HALAMAN LOGIN ===== */
+body.login-page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg, #ffffff);
+}
+
+/* Background logo lembut menutupi seluruh layar */
+body.login-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/Logo-UT.jpg") no-repeat center center;
+  background-size: cover;  /* ubah ke 'contain' jika mau logonya utuh */
+  opacity: 0.07;           /* makin kecil makin lembut */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Dark mode support */
+body[data-theme="dark"].login-page {
+  background: #0b0f14;
+}
+
+/* Supaya form login tidak ketimpa background */
+.login-container,
+.form-box {
+  position: relative;
+  z-index: 1;
+}

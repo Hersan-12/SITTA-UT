@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stok Bahan Ajar - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="dashboard.html" class="link-back">← Kembali</a>
+    <div class="card">
+      <h3>Informasi Stok Bahan Ajar</h3>
+
+      <table id="stokTable" class="table">
+        <thead>
+          <tr>
+            <th>Kode Lokasi</th>
+            <th>Kode Barang</th>
+            <th>Nama</th>
+            <th>Edisi</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h4>Tambah Stok Baru</h4>
+      <div class="form-grid">
+        <input id="fKodeLokasi" placeholder="Kode Lokasi">
+        <input id="fKodeBarang" placeholder="Kode Barang">
+        <input id="fNamaBarang" placeholder="Nama Barang">
+        <input id="fEdisi" placeholder="Edisi">
+        <input id="fStok" type="number" placeholder="Stok">
+      </div>
+      <button id="btnTambah" class="btn">Tambah</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/stok.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>
